@@ -27,5 +27,11 @@ public class App {
         for (Seller obj : list) {
             System.out.println(obj);
         }
+
+        System.out.println("Teste 3: fingAll");
+        List<Seller> list2 = sellerDAO.findAll();
+        for (Seller obj : list2) {
+            System.out.println(obj);
+        }
     }
 }

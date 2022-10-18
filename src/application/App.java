@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -55,6 +56,12 @@ public class App {
         int id = sc.nextInt();
         Department department = departmentDAO.findById(id);
         System.out.println(department);
+
+        System.out.println("Teste 2: department findAll");
+        List<Department> list = departmentDAO.findAll();
+        for (Department department2 : list) {
+            System.out.println(department2);
+        }
 
         sc.close();
     }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DAOFactory;
+import model.dao.DepartmentDAO;
 import model.dao.SellerDAO;
 import model.entities.Department;
 import model.entities.Seller;
@@ -12,7 +13,7 @@ import model.entities.Seller;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        SellerDAO sellerDAO = DAOFactory.createSellerDAO();
+        /*SellerDAO sellerDAO = DAOFactory.createSellerDAO();
 
         System.out.println("Teste 1: findById seller");
         Seller seller = sellerDAO.findById(3);
@@ -46,6 +47,15 @@ public class App {
         System.out.println("Enter seller id: ");
         int id = sc.nextInt();
         sellerDAO.deleteById(id);
-        System.out.println("Delete completed");
+        System.out.println("Delete completed");*/
+
+        DepartmentDAO departmentDAO = DAOFactory.createDepartmentDAO();
+        System.out.println("Teste 1: department findById");
+        System.out.println("Enter department id: ");
+        int id = sc.nextInt();
+        Department department = departmentDAO.findById(id);
+        System.out.println(department);
+
+        sc.close();
     }
 }

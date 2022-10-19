@@ -51,17 +51,43 @@ public class App {
         System.out.println("Delete completed");*/
 
         DepartmentDAO departmentDAO = DAOFactory.createDepartmentDAO();
+
         System.out.println("Teste 1: department findById");
         System.out.println("Enter department id: ");
         int id = sc.nextInt();
         Department department = departmentDAO.findById(id);
         System.out.println(department);
+        sc.nextLine();
 
         System.out.println("Teste 2: department findAll");
         List<Department> list = departmentDAO.findAll();
         for (Department department2 : list) {
             System.out.println(department2);
         }
+
+        System.out.println("Teste 3: department insert");
+        System.out.println("Enter department name: ");
+        String name = sc.nextLine();
+        Department department2 = new Department(null, name);
+        departmentDAO.insert(department2);
+        System.out.println("Inserted! New id: " + department2.getId());
+
+        System.out.println("Teste 4: department update");
+        System.out.println("Enter dept. Id: ");
+        int id2 = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter dept. new name: ");
+        String name2 = sc.nextLine();
+        Department department3 = new Department(id2, name2);
+        departmentDAO.update(department3);
+        System.out.println("Update completed");
+
+        System.out.println("Teste 4: department delete");
+        System.out.println("Enter dept. Id: ");
+        int id3 = sc.nextInt();
+        sc.nextLine();
+        departmentDAO.deleteById(id3);
+        System.out.println("Delete completed");
 
         sc.close();
     }
